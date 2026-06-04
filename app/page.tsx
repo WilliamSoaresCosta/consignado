@@ -7,21 +7,43 @@ const metrics = [
     title: "Clientes ativos",
     value: "128",
     detail: "Base mockada para etapa visual",
+    tone: "teal" as const,
   },
   {
     title: "Emprestimos em andamento",
     value: "42",
     detail: "Sem parcelamento no modelo",
+    tone: "slate" as const,
   },
   {
     title: "Juros do mes",
     value: "18",
     detail: "Cobrancas demonstrativas",
+    tone: "amber" as const,
   },
   {
     title: "Quitacoes",
     value: "5",
     detail: "Total com acrescimo de 20%",
+    tone: "rose" as const,
+  },
+];
+
+const activityItems = [
+  {
+    title: "Cliente cadastrado",
+    description: "Registro preparado para etapa de formulario",
+    status: "Novo",
+  },
+  {
+    title: "Juro mensal a receber",
+    description: "Entrada visual para acompanhamento futuro",
+    status: "Hoje",
+  },
+  {
+    title: "Quitacao total em aberto",
+    description: "Fluxo reservado para liquidacao com acrescimo",
+    status: "Revisar",
   },
 ];
 
@@ -41,15 +63,16 @@ export default function DashboardPage() {
             title={metric.title}
             value={metric.value}
             detail={metric.detail}
+            tone={metric.tone}
           />
         ))}
       </section>
 
-      <section className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-lg border border-line bg-white p-5 shadow-panel">
-          <div className="mb-5 flex items-center justify-between gap-4">
+      <section className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="rounded-lg border border-line bg-white shadow-panel">
+          <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-4">
             <div>
-              <p className="text-xs font-bold uppercase text-brand">Resumo</p>
+              <p className="text-xs font-bold uppercase tracking-normal text-brand">Resumo</p>
               <h2 className="text-lg font-bold text-ink">Movimento recente</h2>
             </div>
             <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-brand-dark">
@@ -57,25 +80,43 @@ export default function DashboardPage() {
             </span>
           </div>
 
-          <div className="grid gap-3">
-            {["Cliente cadastrado", "Juro mensal a receber", "Quitacao total em aberto"].map(
-              (item, index) => (
-                <div
-                  className="flex items-center justify-between rounded-lg border border-line bg-slate-50 px-4 py-3"
-                  key={item}
-                >
-                  <span className="font-semibold text-ink">{item}</span>
-                  <span className="text-sm text-muted">Item {index + 1}</span>
+          <div className="grid gap-3 p-5">
+            {activityItems.map((item) => (
+              <div
+                className="grid gap-3 rounded-lg border border-line bg-slate-50 p-4 sm:grid-cols-[1fr_auto] sm:items-center"
+                key={item.title}
+              >
+                <div>
+                  <span className="font-bold text-ink">{item.title}</span>
+                  <p className="mt-1 text-sm leading-5 text-muted">{item.description}</p>
                 </div>
-              ),
-            )}
+                <span className="w-fit rounded-full border border-line bg-white px-3 py-1 text-xs font-bold text-muted">
+                  {item.status}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
-        <EmptyState
-          title="Proxima etapa preparada"
-          description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juro mensal ou quitacao."
-        />
+        <div className="grid gap-4">
+          <section className="rounded-lg border border-line bg-[#101f24] p-5 text-white shadow-panel">
+            <p className="text-xs font-bold uppercase tracking-normal text-teal-200">
+              Direcao do produto
+            </p>
+            <h2 className="mt-2 text-2xl font-black leading-tight">
+              Base visual pronta para evoluir com calma.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              Esta etapa organiza navegacao, paginas e componentes antes de banco,
+              autenticacao ou regras financeiras.
+            </p>
+          </section>
+
+          <EmptyState
+            title="Proxima etapa preparada"
+            description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juro mensal ou quitacao."
+          />
+        </div>
       </section>
     </>
   );

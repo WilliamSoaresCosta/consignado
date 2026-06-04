@@ -16,11 +16,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
       <body>
-        <div className="min-h-screen bg-slate-100 text-ink lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
+        <div className="min-h-screen bg-[#eef3f6] text-ink lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
           <AppSidebar />
           <div className="min-w-0">
             <AppHeader />
-            <main className="mx-auto grid w-full max-w-7xl gap-6 px-5 py-6 sm:px-6 lg:px-8">
+            <main className="mx-auto grid w-full max-w-7xl gap-7 px-5 py-7 sm:px-6 lg:px-8">
               {children}
             </main>
           </div>
