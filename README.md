@@ -57,7 +57,7 @@ npm run build
 
 O fluxo de emprestimo nao tera parcelamento. A etapa futura deve considerar apenas:
 
-- pagamento do juro do mes;
+- pagamento dos juros do mes;
 - quitacao total com acrescimo de 20% sobre o valor.
 
 ## Proxima etapa sugerida

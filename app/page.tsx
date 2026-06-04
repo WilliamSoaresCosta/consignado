@@ -4,27 +4,27 @@ import { PageTitle } from "@/components/PageTitle";
 
 const metrics = [
   {
-    title: "Clientes ativos",
-    value: "128",
-    detail: "Base mockada para etapa visual",
+    title: "Valor emprestado",
+    value: "R$ 18.500",
+    detail: "Principal em aberto",
     tone: "teal" as const,
   },
   {
-    title: "Emprestimos em andamento",
-    value: "42",
-    detail: "Sem parcelamento no modelo",
+    title: "Juros a receber",
+    value: "R$ 3.700",
+    detail: "20% sobre a carteira mockada",
     tone: "slate" as const,
   },
   {
-    title: "Juros do mes",
-    value: "18",
-    detail: "Cobrancas demonstrativas",
+    title: "Total a receber",
+    value: "R$ 22.200",
+    detail: "Principal + juros",
     tone: "amber" as const,
   },
   {
-    title: "Quitacoes",
-    value: "5",
-    detail: "Total com acrescimo de 20%",
+    title: "Clientes ativos",
+    value: "18",
+    detail: "Entrada visual demonstrativa",
     tone: "rose" as const,
   },
 ];
@@ -36,7 +36,7 @@ const activityItems = [
     status: "Novo",
   },
   {
-    title: "Juro mensal a receber",
+    title: "Juros mensais a receber",
     description: "Entrada visual para acompanhamento futuro",
     status: "Hoje",
   },
@@ -114,7 +114,7 @@ export default function DashboardPage() {
 
           <EmptyState
             title="Proxima etapa preparada"
-            description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juro mensal ou quitacao."
+            description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juros mensais ou quitacao."
           />
         </div>
       </section>

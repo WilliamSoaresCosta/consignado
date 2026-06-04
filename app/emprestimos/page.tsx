@@ -11,7 +11,7 @@ export default function EmprestimosPage() {
       />
       <EmptyState
         title="Emprestimos ainda nao implementados"
-        description="Na proxima etapa, o fluxo deve prever apenas pagamento do juro do mes ou quitacao total com acrescimo de 20%."
+        description="Na proxima etapa, o fluxo deve prever apenas pagamento dos juros do mes ou quitacao total com acrescimo de 20%."
       />
     </>
   );
