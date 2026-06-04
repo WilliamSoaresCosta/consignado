@@ -1,38 +1,58 @@
 # Consignado
 
-Painel operacional para simulacao e acompanhamento de propostas de consignado.
+Base visual inicial do sistema, criada como Etapa 1.
 
 ## Stack
 
-- Vite
-- React
+- Next.js
 - TypeScript
-- CSS modular por estrutura de tela
+- App Router
+- Tailwind CSS
 
-## Como rodar
+## Como rodar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
+Depois acesse:
+
+```text
+http://localhost:3000
+```
+
 ## Scripts
 
 ```bash
 npm run dev
-npm run build
 npm run lint
+npm run build
 ```
 
-## Seguranca desde o inicio
+## O que existe nesta etapa
 
-- Nao versionar `.env` ou chaves privadas.
-- Usar apenas variaveis publicas `VITE_*` no frontend.
-- Nunca armazenar CPF, documentos ou dados bancarios em estado local sem necessidade.
-- Validar entradas antes de enviar dados para APIs.
-- Preparar Supabase com RLS antes de persistir clientes e propostas.
-- Tratar autenticacao e autorizacao como camadas separadas.
+- Layout base com sidebar lateral e header.
+- Dashboard inicial com dados mockados.
+- Paginas vazias para Clientes, Emprestimos, Pagamentos e Relatorios.
+- Componentes reutilizaveis:
+  - `AppSidebar`
+  - `AppHeader`
+  - `MetricCard`
+  - `PageTitle`
+  - `EmptyState`
+
+## O que nao existe nesta etapa
+
+- Banco de dados.
+- Autenticacao.
+- Prisma.
+- Supabase.
+- CRUD.
+- Regras financeiras.
+- Integracao com WhatsApp.
 
 ## Proxima etapa sugerida
 
-Adicionar Supabase Auth com rotas protegidas e politicas RLS para propostas.
+Definir modelo de dados e fluxos principais antes de implementar formularios, validacoes,
+autenticacao e persistencia.

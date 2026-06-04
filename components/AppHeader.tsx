@@ -1,0 +1,15 @@
+export function AppHeader() {
+  return (
+    <header className="border-b border-line bg-white/90 px-5 py-4 backdrop-blur sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs font-bold uppercase text-brand">Etapa 1</p>
+          <h1 className="text-xl font-bold text-ink">Base visual do sistema</h1>
+        </div>
+        <div className="rounded-lg border border-line bg-slate-50 px-3 py-2 text-sm font-semibold text-muted">
+          Ambiente local
+        </div>
+      </div>
+    </header>
+  );
+}
