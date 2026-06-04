@@ -1,14 +1,38 @@
 # Consignado
 
-Base visual inicial para um painel de operação de consignado.
+Painel operacional para simulacao e acompanhamento de propostas de consignado.
 
-## Como abrir
+## Stack
 
-Abra o arquivo `index.html` no navegador.
+- Vite
+- React
+- TypeScript
+- CSS modular por estrutura de tela
 
-## O que já existe
+## Como rodar
 
-- Dashboard com indicadores principais.
-- Simulador de proposta com cálculo de parcela.
-- Lista visual de propostas recentes.
-- Estrutura pronta para evoluir com autenticação, clientes e persistência.
+```bash
+npm install
+npm run dev
+```
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run lint
+```
+
+## Seguranca desde o inicio
+
+- Nao versionar `.env` ou chaves privadas.
+- Usar apenas variaveis publicas `VITE_*` no frontend.
+- Nunca armazenar CPF, documentos ou dados bancarios em estado local sem necessidade.
+- Validar entradas antes de enviar dados para APIs.
+- Preparar Supabase com RLS antes de persistir clientes e propostas.
+- Tratar autenticacao e autorizacao como camadas separadas.
+
+## Proxima etapa sugerida
+
+Adicionar Supabase Auth com rotas protegidas e politicas RLS para propostas.

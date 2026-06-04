@@ -1,153 +1,16 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Consignado | Painel Inicial</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Painel operacional para simulação e acompanhamento de propostas de consignado."
+    >
+    <title>Consignado | Operação</title>
   </head>
   <body>
-    <main class="app-shell">
-      <aside class="sidebar" aria-label="Navegação principal">
-        <div class="brand">
-          <span class="brand-mark">C</span>
-          <div>
-            <strong>Consignado</strong>
-            <small>Operação comercial</small>
-          </div>
-        </div>
-
-        <nav class="nav-list">
-          <a class="active" href="#dashboard">Dashboard</a>
-          <a href="#simulador">Simulador</a>
-          <a href="#propostas">Propostas</a>
-          <a href="#clientes">Clientes</a>
-        </nav>
-      </aside>
-
-      <section class="workspace">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow">Base visual inicial</p>
-            <h1>Gestão de consignado simples, rápida e clara.</h1>
-          </div>
-          <button class="primary-button" type="button">Nova proposta</button>
-        </header>
-
-        <section id="dashboard" class="metrics-grid" aria-label="Indicadores">
-          <article class="metric-card">
-            <span>Propostas hoje</span>
-            <strong>24</strong>
-            <small>+18% vs. ontem</small>
-          </article>
-          <article class="metric-card">
-            <span>Valor aprovado</span>
-            <strong>R$ 186 mil</strong>
-            <small>Ticket médio R$ 7.750</small>
-          </article>
-          <article class="metric-card">
-            <span>Conversão</span>
-            <strong>63%</strong>
-            <small>Em análise e aprovadas</small>
-          </article>
-          <article class="metric-card">
-            <span>Pendências</span>
-            <strong>7</strong>
-            <small>Documentos ou assinatura</small>
-          </article>
-        </section>
-
-        <section class="content-grid">
-          <article id="simulador" class="panel simulator">
-            <div class="panel-header">
-              <div>
-                <p class="eyebrow">Simulação</p>
-                <h2>Calcule uma proposta</h2>
-              </div>
-              <span class="status-pill">INSS</span>
-            </div>
-
-            <form class="form-grid" id="simulation-form">
-              <label>
-                Valor liberado
-                <input id="amount" type="number" min="500" step="100" value="8000">
-              </label>
-              <label>
-                Parcelas
-                <input id="installments" type="number" min="6" max="96" step="6" value="48">
-              </label>
-              <label>
-                Taxa mensal (%)
-                <input id="rate" type="number" min="0.1" max="5" step="0.01" value="1.78">
-              </label>
-              <label>
-                Margem disponível
-                <input id="margin" type="number" min="0" step="10" value="350">
-              </label>
-            </form>
-
-            <div class="result-box">
-              <span>Parcela estimada</span>
-              <strong id="payment">R$ 0,00</strong>
-              <small id="approval-message">Calculando enquadramento...</small>
-            </div>
-          </article>
-
-          <article id="propostas" class="panel">
-            <div class="panel-header">
-              <div>
-                <p class="eyebrow">Esteira</p>
-                <h2>Propostas recentes</h2>
-              </div>
-              <button class="ghost-button" type="button">Filtrar</button>
-            </div>
-
-            <div class="proposal-list" aria-label="Lista de propostas recentes">
-              <div class="proposal-row">
-                <div>
-                  <strong>Maria A. Souza</strong>
-                  <span>R$ 9.400 em 60x</span>
-                </div>
-                <mark class="approved">Aprovada</mark>
-              </div>
-              <div class="proposal-row">
-                <div>
-                  <strong>João C. Lima</strong>
-                  <span>R$ 5.200 em 36x</span>
-                </div>
-                <mark class="review">Análise</mark>
-              </div>
-              <div class="proposal-row">
-                <div>
-                  <strong>Ana P. Rocha</strong>
-                  <span>R$ 12.000 em 72x</span>
-                </div>
-                <mark class="pending">Documento</mark>
-              </div>
-              <div class="proposal-row">
-                <div>
-                  <strong>Carlos M. Reis</strong>
-                  <span>R$ 3.800 em 24x</span>
-                </div>
-                <mark class="approved">Aprovada</mark>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section id="clientes" class="panel client-strip">
-          <div>
-            <p class="eyebrow">Próxima etapa</p>
-            <h2>Preparado para autenticação, clientes e rotas protegidas.</h2>
-          </div>
-          <p>
-            Esta base visual já separa as áreas principais para evoluirmos com cadastro,
-            login, Supabase e persistência das propostas.
-          </p>
-        </section>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
