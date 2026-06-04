@@ -35,6 +35,7 @@ npm run build
 - Layout base com sidebar lateral e header.
 - Dashboard inicial com dados mockados.
 - Paginas vazias para Clientes, Emprestimos, Pagamentos e Relatorios.
+- Textos e mocks alinhados ao modelo sem parcelamento.
 - Componentes reutilizaveis:
   - `AppSidebar`
   - `AppHeader`
@@ -51,6 +52,13 @@ npm run build
 - CRUD.
 - Regras financeiras.
 - Integracao com WhatsApp.
+
+## Regra de negocio futura
+
+O fluxo de emprestimo nao tera parcelamento. A etapa futura deve considerar apenas:
+
+- pagamento do juro do mes;
+- quitacao total com acrescimo de 20% sobre o valor.
 
 ## Proxima etapa sugerida
 

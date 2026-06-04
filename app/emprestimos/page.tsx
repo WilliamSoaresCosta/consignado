@@ -7,11 +7,11 @@ export default function EmprestimosPage() {
       <PageTitle
         eyebrow="Emprestimos"
         title="Emprestimos"
-        description="Pagina vazia para receber regras e formularios em etapa posterior."
+        description="Pagina vazia para receber formularios em etapa posterior, sem fluxo de parcelamento."
       />
       <EmptyState
         title="Emprestimos ainda nao implementados"
-        description="Sem CRUD, banco ou regras financeiras nesta primeira etapa."
+        description="Na proxima etapa, o fluxo deve prever apenas pagamento do juro do mes ou quitacao total com acrescimo de 20%."
       />
     </>
   );

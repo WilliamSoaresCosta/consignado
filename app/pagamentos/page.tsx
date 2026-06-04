@@ -7,11 +7,11 @@ export default function PagamentosPage() {
       <PageTitle
         eyebrow="Pagamentos"
         title="Pagamentos"
-        description="Espaco reservado para agenda e controle de pagamentos."
+        description="Espaco reservado para controle de juros mensais e quitacoes."
       />
       <EmptyState
         title="Pagamentos ficam para a proxima etapa"
-        description="A pagina existe apenas para validar navegacao e layout."
+        description="A pagina existe apenas para validar navegacao e layout, sem parcelamento implementado."
       />
     </>
   );

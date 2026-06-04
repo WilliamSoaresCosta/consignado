@@ -11,17 +11,17 @@ const metrics = [
   {
     title: "Emprestimos em andamento",
     value: "42",
-    detail: "Sem regras financeiras nesta etapa",
+    detail: "Sem parcelamento no modelo",
   },
   {
-    title: "Pagamentos previstos",
+    title: "Juros do mes",
     value: "18",
-    detail: "Agenda demonstrativa",
+    detail: "Cobrancas demonstrativas",
   },
   {
-    title: "Pendencias",
+    title: "Quitacoes",
     value: "5",
-    detail: "Itens para acompanhamento",
+    detail: "Total com acrescimo de 20%",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function DashboardPage() {
       <PageTitle
         eyebrow="Dashboard"
         title="Visao geral da operacao"
-        description="Dados mockados para validar a base visual antes das regras de negocio."
+        description="Dados mockados para validar a base visual do modelo sem parcelamento."
       />
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Indicadores">
@@ -58,7 +58,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="grid gap-3">
-            {["Cliente cadastrado", "Emprestimo aguardando revisao", "Pagamento previsto"].map(
+            {["Cliente cadastrado", "Juro mensal a receber", "Quitacao total em aberto"].map(
               (item, index) => (
                 <div
                   className="flex items-center justify-between rounded-lg border border-line bg-slate-50 px-4 py-3"
@@ -74,7 +74,7 @@ export default function DashboardPage() {
 
         <EmptyState
           title="Proxima etapa preparada"
-          description="As paginas principais ja existem. Na etapa seguinte podemos definir dados, formularios e validacoes."
+          description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juro mensal ou quitacao."
         />
       </section>
     </>
