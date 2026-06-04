@@ -1,29 +1,11 @@
 import { EmptyState } from "@/components/EmptyState";
 import { PageTitle } from "@/components/PageTitle";
-
-const clients = [
-  {
-    name: "Maria A. Souza",
-    status: "Ativo",
-    principal: "R$ 1.000",
-    interest: "R$ 200",
-    total: "R$ 1.200",
-  },
-  {
-    name: "Joao C. Lima",
-    status: "Acompanhar",
-    principal: "R$ 750",
-    interest: "R$ 150",
-    total: "R$ 900",
-  },
-  {
-    name: "Ana P. Rocha",
-    status: "Em aberto",
-    principal: "R$ 1.500",
-    interest: "R$ 300",
-    total: "R$ 1.800",
-  },
-];
+import {
+  clientPortfolio,
+  formatCurrency,
+  interestRate,
+  portfolioTotals,
+} from "@/lib/portfolio";
 
 export default function ClientesPage() {
   return (
@@ -31,8 +13,29 @@ export default function ClientesPage() {
       <PageTitle
         eyebrow="Clientes"
         title="Clientes"
-        description="Visao inicial para entrada e acompanhamento de todos os clientes."
+        description="Visao inicial de uma carteira com R$ 50.000 emprestados em diversos clientes."
       />
+
+      <section className="grid gap-4 sm:grid-cols-3">
+        <div className="rounded-lg border border-line bg-white p-5 shadow-panel">
+          <span className="text-sm font-semibold text-muted">Emprestado</span>
+          <strong className="mt-2 block text-2xl font-black text-ink">
+            {formatCurrency(portfolioTotals.principal)}
+          </strong>
+        </div>
+        <div className="rounded-lg border border-line bg-white p-5 shadow-panel">
+          <span className="text-sm font-semibold text-muted">Juros</span>
+          <strong className="mt-2 block text-2xl font-black text-ink">
+            {formatCurrency(portfolioTotals.interest)}
+          </strong>
+        </div>
+        <div className="rounded-lg border border-line bg-white p-5 shadow-panel">
+          <span className="text-sm font-semibold text-muted">Total a receber</span>
+          <strong className="mt-2 block text-2xl font-black text-ink">
+            {formatCurrency(portfolioTotals.total)}
+          </strong>
+        </div>
+      </section>
 
       <section className="rounded-lg border border-line bg-white shadow-panel">
         <div className="flex flex-col gap-3 border-b border-line px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
@@ -40,7 +43,9 @@ export default function ClientesPage() {
             <p className="text-xs font-bold uppercase tracking-normal text-brand">
               Carteira inicial
             </p>
-            <h2 className="text-lg font-bold text-ink">Entrada de clientes</h2>
+            <h2 className="text-lg font-bold text-ink">
+              Entrada de clientes com {interestRate * 100}% de juros
+            </h2>
           </div>
           <span className="w-fit rounded-lg bg-slate-100 px-3 py-2 text-sm font-semibold text-muted">
             Em preparacao
@@ -59,7 +64,11 @@ export default function ClientesPage() {
               </tr>
             </thead>
             <tbody>
-              {clients.map((client) => (
+              {clientPortfolio.map((client) => {
+                const interest = client.principal * interestRate;
+                const total = client.principal + interest;
+
+                return (
                 <tr className="border-b border-line last:border-b-0" key={client.name}>
                   <td className="px-5 py-4 font-semibold text-ink">{client.name}</td>
                   <td className="px-5 py-4">
@@ -67,11 +76,18 @@ export default function ClientesPage() {
                       {client.status}
                     </span>
                   </td>
-                  <td className="px-5 py-4 text-sm text-muted">{client.principal}</td>
-                  <td className="px-5 py-4 text-sm text-muted">{client.interest}</td>
-                  <td className="px-5 py-4 text-sm font-bold text-ink">{client.total}</td>
+                  <td className="px-5 py-4 text-sm text-muted">
+                    {formatCurrency(client.principal)}
+                  </td>
+                  <td className="px-5 py-4 text-sm text-muted">
+                    {formatCurrency(interest)}
+                  </td>
+                  <td className="px-5 py-4 text-sm font-bold text-ink">
+                    {formatCurrency(total)}
+                  </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>

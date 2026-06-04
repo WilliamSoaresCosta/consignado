@@ -1,29 +1,30 @@
 import { EmptyState } from "@/components/EmptyState";
 import { MetricCard } from "@/components/MetricCard";
 import { PageTitle } from "@/components/PageTitle";
+import { formatCurrency, interestRate, portfolioTotals } from "@/lib/portfolio";
 
 const metrics = [
   {
     title: "Valor emprestado",
-    value: "R$ 18.500",
+    value: formatCurrency(portfolioTotals.principal),
     detail: "Principal em aberto",
     tone: "teal" as const,
   },
   {
     title: "Juros a receber",
-    value: "R$ 3.700",
-    detail: "20% sobre a carteira atual",
+    value: formatCurrency(portfolioTotals.interest),
+    detail: `${interestRate * 100}% sobre a carteira atual`,
     tone: "slate" as const,
   },
   {
     title: "Total a receber",
-    value: "R$ 22.200",
+    value: formatCurrency(portfolioTotals.total),
     detail: "Principal + juros",
     tone: "amber" as const,
   },
   {
     title: "Clientes ativos",
-    value: "18",
+    value: String(portfolioTotals.clients),
     detail: "Base em acompanhamento",
     tone: "rose" as const,
   },
@@ -53,7 +54,7 @@ export default function DashboardPage() {
       <PageTitle
         eyebrow="Dashboard"
         title="Visao geral da operacao"
-        description="Previa operacional do modelo sem parcelamento, com foco em juros mensais e quitacao."
+        description="Carteira simulada com R$ 50.000 emprestados, juros de 20% e total a receber."
       />
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Indicadores">
@@ -101,14 +102,14 @@ export default function DashboardPage() {
         <div className="grid gap-4">
           <section className="rounded-lg border border-line bg-[#101f24] p-5 text-white shadow-panel">
             <p className="text-xs font-bold uppercase tracking-normal text-teal-200">
-              Direcao do produto
+              Carteira atual
             </p>
             <h2 className="mt-2 text-2xl font-black leading-tight">
-              Base visual pronta para evoluir com calma.
+              {formatCurrency(portfolioTotals.total)} previstos para recebimento.
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-300">
-              Esta etapa organiza navegacao, paginas e componentes antes de banco,
-              autenticacao ou regras financeiras.
+              A composicao considera {formatCurrency(portfolioTotals.principal)} em
+              principal e {formatCurrency(portfolioTotals.interest)} em juros.
             </p>
           </section>
 
