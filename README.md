@@ -33,9 +33,9 @@ npm run build
 ## O que existe nesta etapa
 
 - Layout base com sidebar lateral e header.
-- Dashboard inicial com dados mockados.
+- Dashboard inicial com dados de exemplo.
 - Paginas vazias para Clientes, Emprestimos, Pagamentos e Relatorios.
-- Textos e mocks alinhados ao modelo sem parcelamento.
+- Textos e dados de exemplo alinhados ao modelo sem parcelamento.
 - Componentes reutilizaveis:
   - `AppSidebar`
   - `AppHeader`

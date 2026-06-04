@@ -31,19 +31,19 @@ export default function ClientesPage() {
       <PageTitle
         eyebrow="Clientes"
         title="Clientes"
-        description="Visual inicial para entrada e acompanhamento de todos os clientes."
+        description="Visao inicial para entrada e acompanhamento de todos os clientes."
       />
 
       <section className="rounded-lg border border-line bg-white shadow-panel">
         <div className="flex flex-col gap-3 border-b border-line px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-normal text-brand">
-              Carteira mockada
+              Carteira inicial
             </p>
             <h2 className="text-lg font-bold text-ink">Entrada de clientes</h2>
           </div>
           <span className="w-fit rounded-lg bg-slate-100 px-3 py-2 text-sm font-semibold text-muted">
-            Somente visual
+            Em preparacao
           </span>
         </div>
 

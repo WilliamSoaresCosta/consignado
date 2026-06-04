@@ -11,7 +11,7 @@ export function AppHeader() {
             Ambiente local
           </span>
           <span className="rounded-lg bg-[#101f24] px-3 py-2 text-sm font-semibold text-white">
-            Visual only
+            Em desenvolvimento
           </span>
         </div>
       </div>

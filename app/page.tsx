@@ -12,7 +12,7 @@ const metrics = [
   {
     title: "Juros a receber",
     value: "R$ 3.700",
-    detail: "20% sobre a carteira mockada",
+    detail: "20% sobre a carteira atual",
     tone: "slate" as const,
   },
   {
@@ -24,7 +24,7 @@ const metrics = [
   {
     title: "Clientes ativos",
     value: "18",
-    detail: "Entrada visual demonstrativa",
+    detail: "Base em acompanhamento",
     tone: "rose" as const,
   },
 ];
@@ -53,7 +53,7 @@ export default function DashboardPage() {
       <PageTitle
         eyebrow="Dashboard"
         title="Visao geral da operacao"
-        description="Dados mockados para validar a base visual do modelo sem parcelamento."
+        description="Previa operacional do modelo sem parcelamento, com foco em juros mensais e quitacao."
       />
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Indicadores">
@@ -76,7 +76,7 @@ export default function DashboardPage() {
               <h2 className="text-lg font-bold text-ink">Movimento recente</h2>
             </div>
             <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-brand-dark">
-              Mock
+              Previa
             </span>
           </div>
 
