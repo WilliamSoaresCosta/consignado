@@ -7,11 +7,11 @@ export default function RelatoriosPage() {
       <PageTitle
         eyebrow="Relatorios"
         title="Relatorios"
-        description="Area futura para indicadores, exportacoes e visoes gerenciais."
+        description="Indicadores da carteira, juros a receber e total previsto."
       />
       <EmptyState
-        title="Relatorios ainda vazios"
-        description="Sem graficos ou consultas reais nesta etapa inicial."
+        title="Resumo gerencial"
+        description="Os relatorios consolidam valor emprestado, juros, quitacoes e clientes em acompanhamento."
       />
     </>
   );

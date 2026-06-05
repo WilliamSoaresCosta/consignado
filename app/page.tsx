@@ -33,17 +33,17 @@ const metrics = [
 const activityItems = [
   {
     title: "Cliente cadastrado",
-    description: "Registro preparado para etapa de formulario",
+    description: "Novo cliente incluido na carteira",
     status: "Novo",
   },
   {
     title: "Juros mensais a receber",
-    description: "Entrada visual para acompanhamento futuro",
+    description: "Recebimento previsto para a carteira ativa",
     status: "Hoje",
   },
   {
     title: "Quitacao total em aberto",
-    description: "Fluxo reservado para liquidacao com acrescimo",
+    description: "Cliente com saldo total disponivel para conferencia",
     status: "Revisar",
   },
 ];
@@ -77,7 +77,7 @@ export default function DashboardPage() {
               <h2 className="text-lg font-bold text-ink">Movimento recente</h2>
             </div>
             <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-brand-dark">
-              Previa
+              Carteira
             </span>
           </div>
 
@@ -114,8 +114,8 @@ export default function DashboardPage() {
           </section>
 
           <EmptyState
-            title="Proxima etapa preparada"
-            description="As paginas principais ja existem. Na etapa seguinte podemos desenhar formularios sem parcelamento e com opcoes de juros mensais ou quitacao."
+            title="Fluxo operacional definido"
+            description="A carteira trabalha com duas saidas: pagamento dos juros mensais ou quitacao total do saldo em aberto."
           />
         </div>
       </section>

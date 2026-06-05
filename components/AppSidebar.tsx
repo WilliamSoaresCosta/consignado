@@ -17,15 +17,15 @@ export function AppSidebar() {
             C
           </span>
           <div>
-            <strong className="block text-base">Consignado</strong>
-            <small className="text-sm text-slate-400">Base operacional</small>
+            <strong className="block text-base">Gestor de Emprestimos</strong>
+            <small className="text-sm text-slate-400">Controle de carteira</small>
           </div>
         </div>
         <div className="mt-5 rounded-lg bg-slate-950/45 p-3">
           <p className="text-[11px] font-bold uppercase tracking-normal text-teal-200">
-            Etapa atual
+            Operacao
           </p>
-          <p className="mt-1 text-sm text-slate-300">Estrutura visual profissional</p>
+          <p className="mt-1 text-sm text-slate-300">Juros mensais e quitacao total</p>
         </div>
       </div>
 
@@ -46,7 +46,7 @@ export function AppSidebar() {
 
       <div className="mt-8 rounded-lg border border-white/10 bg-white/[0.04] p-4">
         <p className="text-xs font-bold uppercase tracking-normal text-slate-400">
-          Modelo
+          Regra da carteira
         </p>
         <p className="mt-2 text-sm leading-6 text-slate-300">
           Sem parcelamento: juros mensais ou quitacao total.

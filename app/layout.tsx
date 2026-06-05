@@ -4,8 +4,8 @@ import { AppSidebar } from "@/components/AppSidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Consignado",
-  description: "Base visual inicial para sistema de consignado.",
+  title: "Gestor de Emprestimos",
+  description: "Painel operacional para controle de emprestimos.",
 };
 
 type RootLayoutProps = {

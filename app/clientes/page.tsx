@@ -13,7 +13,7 @@ export default function ClientesPage() {
       <PageTitle
         eyebrow="Clientes"
         title="Clientes"
-        description="Visao inicial de uma carteira com R$ 50.000 emprestados em diversos clientes."
+        description="Carteira com R$ 50.000 emprestados em diversos clientes."
       />
 
       <section className="grid gap-4 sm:grid-cols-3">
@@ -41,14 +41,14 @@ export default function ClientesPage() {
         <div className="flex flex-col gap-3 border-b border-line px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-normal text-brand">
-              Carteira inicial
+              Carteira de clientes
             </p>
             <h2 className="text-lg font-bold text-ink">
               Entrada de clientes com {interestRate * 100}% de juros
             </h2>
           </div>
           <span className="w-fit rounded-lg bg-slate-100 px-3 py-2 text-sm font-semibold text-muted">
-            Em preparacao
+            Carteira ativa
           </span>
         </div>
 
@@ -94,8 +94,8 @@ export default function ClientesPage() {
       </section>
 
       <EmptyState
-        title="Formulario vem na proxima etapa"
-        description="Depois podemos criar a entrada de todos os clientes com campos, validacao e regras, ainda antes de conectar banco."
+        title="Cadastro de clientes"
+        description="A entrada de novos clientes sera organizada com campos de identificacao, valor emprestado, juros, status e comprovantes."
       />
     </>
   );

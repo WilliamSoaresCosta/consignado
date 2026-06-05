@@ -1,6 +1,6 @@
-# Consignado
+# Gestor de Emprestimos
 
-Base visual inicial do sistema, criada como Etapa 1.
+Painel operacional para controle de carteira de emprestimos.
 
 ## Stack
 
@@ -30,11 +30,11 @@ npm run lint
 npm run build
 ```
 
-## O que existe nesta etapa
+## O que existe
 
 - Layout base com sidebar lateral e header.
-- Dashboard inicial com dados de exemplo.
-- Paginas vazias para Clientes, Emprestimos, Pagamentos e Relatorios.
+- Dashboard com indicadores de carteira.
+- Paginas para Clientes, Emprestimos, Pagamentos e Relatorios.
 - Textos e dados de exemplo alinhados ao modelo sem parcelamento.
 - Componentes reutilizaveis:
   - `AppSidebar`
@@ -43,7 +43,7 @@ npm run build
   - `PageTitle`
   - `EmptyState`
 
-## O que nao existe nesta etapa
+## Fora do escopo atual
 
 - Banco de dados.
 - Autenticacao.
@@ -53,14 +53,14 @@ npm run build
 - Regras financeiras.
 - Integracao com WhatsApp.
 
-## Regra de negocio futura
+## Regra de negocio
 
-O fluxo de emprestimo nao tera parcelamento. A etapa futura deve considerar apenas:
+O fluxo de emprestimo nao tera parcelamento. O sistema considera apenas:
 
 - pagamento dos juros do mes;
 - quitacao total com acrescimo de 20% sobre o valor.
 
-## Proxima etapa sugerida
+## Proxima evolucao sugerida
 
 Definir modelo de dados e fluxos principais antes de implementar formularios, validacoes,
 autenticacao e persistencia.
